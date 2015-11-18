@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.hibernateTest.relationmappingdomain">
+   <class name="Address" table="address">
+      <id name="address_id" type="int" length="10"><generator class="identity"/></id>
+      <property name="city" type="string" length="32"/>
+      <property name="part" type="string" length="32"/> 
+      
+      <set name="customer_set" inverse="true" cascade="all">
+         <key column="customer_address"/>
+         <one-to-many class="Customer"/>
+      </set>     
+   </class>
+   
+   <sql-query name="deleteCustomerWhereAddress_address">
+      delete 
+      from Customer
+      where customer.customer_address=?
+   </sql-query>
+   
+   <sql-query name="deleteAddressWhereAddress_id_address">
+      delete
+      from address
+      where address.address_id=?
+   </sql-query>
+   
+</hibernate-mapping>

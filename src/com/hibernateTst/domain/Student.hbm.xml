@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+<hibernate-mapping package="com.hibernateTst.domain">
+     <class name="Student" table="student">
+         <id name="id" column="student_id"><generator class="identity"/></id>
+         <property name="name" column="student_name" type="string" length="32"/>
+         <array name="schools" table="student_school_list">
+            <key column="student_id" not-null="true"/>
+            <list-index column="list_order"/>
+            <element type="string" column="school_name"/>
+         </array>
+     </class>
+</hibernate-mapping>
