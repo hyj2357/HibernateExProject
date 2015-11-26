@@ -22,5 +22,13 @@
             <key column="action_id"/>
             <one-to-many class="Action_summary"/>
       </set>
+      <set name="action_summaries" inverse="true" cascade="all">
+            <key column="action_id"/>
+            <one-to-many class="Action_summary"/>
+      </set>
+      <set name="action_join_infos" inverse="true" cascade="all">
+            <key column="action_id"/>
+            <one-to-many class="Action_join_info"/>
+      </set>
    </class>     
 </hibernate-mapping>

@@ -11,6 +11,8 @@ public class Action {
 	private Account account;
 	private Set<Action_pic> action_pics;
 	private Set<Action_summary> action_summaries;
+	private Set<Action_join_info> action_join_infos;
+	
 	
 	public Account getAccount() {
 		return account;
@@ -53,6 +55,15 @@ public class Action {
 	}
 	public void setObj_status(Integer obj_status) {
 		this.obj_status = obj_status;
+	}
+	public Set<Action_join_info> getAction_join_infos() {
+		return action_join_infos;
+	}
+	public void setAction_join_infos(Set<Action_join_info> action_join_infos) {
+		this.action_join_infos = action_join_infos;
+	}
+	public void setAction_summaries(Set<Action_summary> action_summaries) {
+		this.action_summaries = action_summaries;
 	}
 	
 }
