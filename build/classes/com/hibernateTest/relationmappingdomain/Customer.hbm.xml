@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.hibernateTest.relationmappingdomain">
+   <class name="Customer" table="customer">
+      <id name="customer_id" type="int" length="10"><generator class="identity"/></id>
+      <property name="customer_name" type="string" length="4"/>
+      
+      <many-to-one name="customer_address" class="Address" column="customer_address"/>
+   </class>
+   
+   <sql-query name="findByAddress">
+       <return alias="customer" class="com.hibernateTest.relationmappingdomain.Customer"/>
+       select cs.*
+       from customer cs
+       where cs.customer_address=?
+   </sql-query>
+   
+</hibernate-mapping>

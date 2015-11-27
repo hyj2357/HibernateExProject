@@ -35,6 +35,7 @@ public class NewsManager
 	private static Session session;
 	private static Transaction tx;
 	static{
+		 System.out.println(FILEPATH);
 		 config = new Configuration().configure(new File(FILEPATH));
 	     sessionFactory = config.buildSessionFactory();
 		 session = sessionFactory.openSession();

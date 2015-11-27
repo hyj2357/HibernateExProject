@@ -1,6 +1,7 @@
 package com.scuthnweb2.domain;
 
-public class Album_pic {     
+public class Album_pic {   
+	private Integer id;
 	 private String url;
      private Album album;
 	public String getUrl() {
@@ -14,5 +15,11 @@ public class Album_pic {
 	}
 	public void setAlbum(Album album) {
 		this.album = album;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

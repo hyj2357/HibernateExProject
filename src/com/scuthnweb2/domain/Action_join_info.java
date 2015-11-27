@@ -1,6 +1,7 @@
 package com.scuthnweb2.domain;
 
 public class Action_join_info {
+	 private Integer id;
      private java.sql.Timestamp join_time,end_join_time,start_time,end_time;
      private Account account;
      
@@ -34,5 +35,11 @@ public class Action_join_info {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

@@ -1,6 +1,7 @@
 package com.scuthnweb2.domain;
 
 public class Action_summary {
+	private Integer id;
      private Account account;
      private Action  action;
 	public Account getAccount() {
@@ -14,6 +15,12 @@ public class Action_summary {
 	}
 	public void setAction(Action action) {
 		this.action = action;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
      
 }

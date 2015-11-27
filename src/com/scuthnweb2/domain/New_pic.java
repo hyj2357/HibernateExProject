@@ -1,6 +1,7 @@
 package com.scuthnweb2.domain;
 
 public class New_pic {
+	private Integer id;
      private String url;
      private New _new;
      
@@ -16,6 +17,12 @@ public class New_pic {
 	}
 	public void set_new(New _new) {
 		this._new = _new;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
      
      
