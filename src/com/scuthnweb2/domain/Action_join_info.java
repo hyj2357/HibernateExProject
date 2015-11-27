@@ -3,7 +3,7 @@ package com.scuthnweb2.domain;
 public class Action_join_info {
 	 private Integer id;
      private java.sql.Timestamp join_time,end_join_time,start_time,end_time;
-     private Account account;
+     private Action action;
      
      
 	public java.sql.Timestamp getJoin_time() {
@@ -30,11 +30,11 @@ public class Action_join_info {
 	public void setEnd_time(java.sql.Timestamp end_time) {
 		this.end_time = end_time;
 	}
-	public Account getAccount() {
-		return account;
+	public Action getAction() {
+		return action;
 	}
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setAction(Action action) {
+		this.action = action;
 	}
 	public Integer getId() {
 		return id;
