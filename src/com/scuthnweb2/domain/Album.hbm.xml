@@ -10,7 +10,9 @@
    <class name="Album" table="album">
       <id name="id" type="int" length="10"><generator class="identity"/></id>   
       <property name="album_name" type="string"/>
-      <property name="introduction" type="string"/>
+      <property name="introduction" type="string">
+          <column  name="introduction" sql-type="text" />
+      </property>
       <property name="add_time" type="java.sql.Timestamp"/>
    
       <many-to-one name="account" class="Account" column="creator_account"/>                     

@@ -9,7 +9,9 @@
 <hibernate-mapping package="com.scuthnweb2.domain">
    <class name="Note" table="note">
       <id name="id" type="int" length="10"><generator class="identity"/></id>   
-      <property name="content" type="string"/>
+      <property name="content" type="string">
+          <column  name="content" sql-type="text" />
+      </property>      
       <property name="add_time" type="java.sql.Timestamp"/>
    
       <many-to-one name="poster_account" class="Account" column="poster_account"/>                     

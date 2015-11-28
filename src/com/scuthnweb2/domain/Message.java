@@ -4,7 +4,7 @@ public class Message {
 	
      private Integer id;
      private String title,content;
-     private Integer read;
+     private Integer _read;
      
      private Account sender_account,receiver_account;
 
@@ -32,12 +32,12 @@ public class Message {
 		this.content = content;
 	}
 
-	public Integer getRead() {
-		return read;
+	public Integer get_read() {
+		return _read;
 	}
 
-	public void setRead(Integer read) {
-		this.read = read;
+	public void set_read(Integer _read) {
+		this._read = _read;
 	}
 
 	public Account getSender_account() {

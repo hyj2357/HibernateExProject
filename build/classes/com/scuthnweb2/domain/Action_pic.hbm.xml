@@ -8,10 +8,12 @@
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.scuthnweb2.domain">
    <class name="Action_pic" table="action_pic">
-        <id name="id" type="int" length="10">
-            <generator class="identity"/>
-        </id>     
-      <property name="url" type="string"/>
+      <id name="id" type="int" length="10">
+          <generator class="identity"/>
+      </id>     
+      <property name="url" type="string">
+          <column  name="url" sql-type="text" />
+      </property>
       
       <many-to-one name="action" class="Action" column="action_id"/>                     
    </class>     

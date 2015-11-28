@@ -10,7 +10,9 @@
    <class name="Message" table="message">
       <id name="id" type="int" length="10"><generator class="identity"/></id>   
       <property name="title" type="string"/>
-      <property name="content" type="string"/>
+      <property name="content" type="string">
+          <column  name="content" sql-type="text" />
+      </property>
       <property name="_read" type="int"/>
    
       <many-to-one name="sender_account" class="Account" column="sender_account"/>                     

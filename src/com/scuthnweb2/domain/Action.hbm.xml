@@ -10,8 +10,13 @@
    <class name="Action" table="action">
       <id name="id" type="int" length="10"><generator class="identity"/></id>   
       <property name="action_name" type="java.sql.Timestamp"/>
-      <property name="introduction" type="java.sql.Timestamp"/>
-      <property name="obj_status" type="int"/>
+      <property name="introduction" type="string">
+          <column  name="introduction" sql-type="text" />
+      </property>
+      
+      <property name="obj_status" type="int">
+           <column name="obj_status" sql-type="bit"/>
+      </property>
    
       <many-to-one name="account" class="Account" column="creator_account"/>                     
       <set name="action_pics" inverse="true" cascade="all">
